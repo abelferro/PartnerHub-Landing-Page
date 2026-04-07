@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Partner Hub | Connecting Families & Care Providers",
+    default: "Partner Hub | Connecting Care",
     template: "%s | Partner Hub",
   },
   description:
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Partner Hub" }],
   openGraph: {
     type: "website",
-    title: "Partner Hub | Connecting Families & Care Providers",
+    title: "Partner Hub | Connecting Care",
     description:
       "One platform connecting families and care providers in North Carolina. Apply for programs, find care, manage attendance and payments.",
     siteName: "Partner Hub",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Partner Hub | Connecting Families & Care Providers",
+    title: "Partner Hub | Connecting Care",
     description:
       "One platform connecting families and care providers in North Carolina. Apply for programs, find care, manage attendance and payments.",
   },
