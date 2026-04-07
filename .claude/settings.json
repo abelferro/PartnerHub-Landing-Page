@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git branch:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(gh repo:*)",
+      "Bash(git -C /Users/abelferro/GitHub/PartnerHub-Landing-Page add -A)",
+      "Bash(git -C /Users/abelferro/GitHub/PartnerHub-Landing-Page commit -m ':*)",
+      "Bash(git -C /Users/abelferro/GitHub/PartnerHub-Landing-Page push)"
     ]
   }
 }
