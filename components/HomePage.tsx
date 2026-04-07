@@ -3,6 +3,8 @@
 import { motion, MotionConfig } from "motion/react";
 import Image from "next/image";
 import React, { useState, useRef } from "react";
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 import {
   Users,
   MapPin,
@@ -177,7 +179,7 @@ export default function HomePage() {
                 className="mb-8"
               >
                 <Image
-                  src="/images/Partner_Hub_Primary_Logo_Stacked.png"
+                  src={`${BASE}/images/Partner_Hub_Primary_Logo_Stacked.png`}
                   alt="Partner Hub"
                   width={300}
                   height={160}
@@ -633,7 +635,7 @@ export default function HomePage() {
 
                 <div className="pt-12 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
                   <Image
-                    src="/images/Partner_Hub_Primary_Logo_Inline.png"
+                    src={`${BASE}/images/Partner_Hub_Primary_Logo_Inline.png`}
                     alt="Partner Hub"
                     width={280}
                     height={56}
