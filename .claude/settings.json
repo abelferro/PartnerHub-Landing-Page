@@ -16,7 +16,8 @@
       "Bash(pkill -f \"next dev\")",
       "Bash(git -C /Users/abelferro/GitHub/PartnerHub-Landing-Page log --oneline --after=\"2026-04-06 23:59\" --before=\"2026-04-08 00:00\")",
       "Bash(npx tsc:*)",
-      "Bash(git -C /Users/abelferro/GitHub/PartnerHub-Landing-Page status)"
+      "Bash(git -C /Users/abelferro/GitHub/PartnerHub-Landing-Page status)",
+      "Bash(git -C /Users/abelferro/GitHub/PartnerHub-Landing-Page commit --allow-empty -m \"ci: trigger deploy with updated FTP credentials\")"
     ]
   }
 }

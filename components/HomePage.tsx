@@ -91,7 +91,7 @@ const FeatureCard = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay, duration: 0.5 }}
-    className="glass p-8 rounded-[32px] flex flex-col items-start gap-4"
+    className="glass p-8 rounded-[32px] flex flex-col items-start gap-4 w-full"
   >
     <div
       aria-hidden="true"
@@ -290,7 +290,7 @@ export default function HomePage() {
               </SectionTitle>
 
               <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="grid gap-6">
+                <div className="grid gap-6 justify-items-start md:justify-items-center">
                   <FeatureCard
                     icon={FileText}
                     title="Secure Applications"
@@ -318,7 +318,7 @@ export default function HomePage() {
                     viewport={{ once: true }}
                     onClick={scrollToForm}
                     aria-label="Apply or get started — scroll to sign up form"
-                    className="mt-4 flex items-center gap-2 text-brand-purple font-bold text-lg transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple rounded self-start md:self-center"
+                    className="mt-4 flex items-center gap-2 text-brand-purple font-bold text-lg hover:gap-4 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple rounded self-start md:self-center"
                   >
                     Apply or Get Started <ArrowRight aria-hidden="true" size={20} />
                   </motion.button>
@@ -430,7 +430,7 @@ export default function HomePage() {
                   </div>
                 </motion.div>
 
-                <div className="grid gap-6 order-1 md:order-2">
+                <div className="grid gap-6 order-1 md:order-2 justify-items-start md:justify-items-center">
                   <FeatureCard
                     icon={Calendar}
                     title="Attendance Tracking"
@@ -458,7 +458,7 @@ export default function HomePage() {
                     viewport={{ once: true }}
                     onClick={scrollToForm}
                     aria-label="Access Provider Tools — scroll to sign up form"
-                    className="mt-4 flex items-center gap-2 text-brand-pink font-bold text-lg transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink rounded self-start md:self-center"
+                    className="mt-4 flex items-center gap-2 text-brand-pink font-bold text-lg hover:gap-4 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink rounded self-start md:self-center"
                   >
                     Access Provider Tools <ArrowRight aria-hidden="true" size={20} />
                   </motion.button>
