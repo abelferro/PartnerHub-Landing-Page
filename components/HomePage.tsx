@@ -70,23 +70,33 @@ const FeatureCard = ({
   title,
   description,
   delay = 0,
+  compact = false,
 }: {
   iconSrc: string;
   iconAlt: string;
   title: string;
   description: string;
   delay?: number;
+  compact?: boolean;
 }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay, duration: 0.5 }}
-    className="glass p-8 rounded-[32px] flex flex-col items-start gap-4 w-full"
+    className={`glass flex w-full flex-col items-start rounded-[32px] ${
+      compact ? "gap-3 p-7" : "gap-4 p-8"
+    }`}
   >
-    <Image src={iconSrc} alt={iconAlt} width={64} height={64} className="w-16 h-16" />
-    <h3 className="text-xl font-semibold">{title}</h3>
-    <p className="text-slate-900 leading-relaxed">{description}</p>
+    <Image
+      src={iconSrc}
+      alt={iconAlt}
+      width={compact ? 56 : 64}
+      height={compact ? 56 : 64}
+      className={compact ? "h-14 w-14" : "h-16 w-16"}
+    />
+    <h3 className={compact ? "text-[1.05rem] font-semibold leading-tight" : "text-xl font-semibold"}>{title}</h3>
+    <p className={compact ? "text-slate-900 leading-[1.45]" : "text-slate-900 leading-relaxed"}>{description}</p>
   </motion.div>
 );
 
@@ -219,54 +229,54 @@ const ProvidersPreview = () => (
       </div>
 
       <div className="px-4 py-4 sm:px-5 sm:py-5">
-        <p className="text-2xl font-semibold text-slate-900 sm:text-3xl">Administrator Dashboard</p>
-        <div className="mt-5 grid gap-4">
-          <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
+        <p className="text-2xl font-semibold leading-tight text-slate-900 sm:text-3xl">Administrator Dashboard</p>
+        <div className="mt-4 grid gap-3">
+          <div className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-slate-100">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue">
-                <FileBarChart2 size={20} />
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue">
+                <FileBarChart2 size={18} />
               </div>
-              <p className="text-lg font-semibold text-slate-900 sm:text-xl">Reports</p>
+              <p className="text-base font-semibold leading-tight text-slate-900 sm:text-lg">Reports</p>
             </div>
-            <div className="mt-4 space-y-3 text-sm">
+            <div className="mt-3 space-y-2 text-sm leading-tight">
               <p className="text-brand-blue">Reports</p>
               <p className="text-brand-blue">Attendance</p>
             </div>
           </div>
-          <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
+          <div className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-slate-100">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-purple/10 text-brand-purple">
-                <Building2 size={20} />
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-purple/10 text-brand-purple">
+                <Building2 size={18} />
               </div>
-              <p className="text-lg font-semibold text-slate-900 sm:text-xl">Site/Provider Maintenance</p>
+              <p className="text-base font-semibold leading-tight text-slate-900 sm:text-lg">Site/Provider Maintenance</p>
             </div>
-            <div className="mt-4 space-y-3 text-sm">
+            <div className="mt-3 space-y-2 text-sm leading-tight">
               <p className="text-brand-blue">Organizations</p>
               <p className="text-brand-blue">Sites</p>
               <p className="text-brand-blue">Users</p>
             </div>
           </div>
-          <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
+          <div className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-slate-100">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-green/10 text-brand-green">
-                <CalendarDays size={20} />
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-green/10 text-brand-green">
+                <CalendarDays size={18} />
               </div>
-              <p className="text-lg font-semibold text-slate-900 sm:text-xl">Attendance</p>
+              <p className="text-base font-semibold leading-tight text-slate-900 sm:text-lg">Attendance</p>
             </div>
-            <div className="mt-4 space-y-3 text-sm">
+            <div className="mt-3 space-y-2 text-sm leading-tight">
               <p className="text-brand-blue">Attendance</p>
               <p className="text-brand-blue">Children</p>
               <p className="text-brand-blue">Redetermination</p>
             </div>
           </div>
-          <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
+          <div className="rounded-3xl bg-white p-4 shadow-sm ring-1 ring-slate-100">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-pink/10 text-brand-pink">
-                <FolderOpen size={20} />
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-pink/10 text-brand-pink">
+                <FolderOpen size={18} />
               </div>
-              <p className="text-lg font-semibold text-slate-900 sm:text-xl">Applications</p>
+              <p className="text-base font-semibold leading-tight text-slate-900 sm:text-lg">Applications</p>
             </div>
-            <div className="mt-4 space-y-3 text-sm">
+            <div className="mt-3 space-y-2 text-sm leading-tight">
               <p className="text-brand-blue">Manage Children Applications</p>
               <p className="text-brand-blue">Manage Enrollments</p>
             </div>
@@ -547,6 +557,7 @@ export default function HomePage() {
                     title="Attendance Tracking"
                     description="Keep accurate attendance records with our easy-to-use digital check-in system."
                     delay={0.1}
+                    compact
                   />
                   <FeatureCard
                     iconSrc={`${BASE}/icons/icon-invoices.svg`}
@@ -554,6 +565,7 @@ export default function HomePage() {
                     title="Payment Management"
                     description="Manage provider payments and track invoices with full transparency and automated reporting."
                     delay={0.2}
+                    compact
                   />
                   <FeatureCard
                     iconSrc={`${BASE}/icons/icon-data.svg`}
@@ -561,6 +573,7 @@ export default function HomePage() {
                     title="Site Management"
                     description="Manage multiple sites, run comprehensive reports, and ensure compliance across your organization."
                     delay={0.3}
+                    compact
                   />
                 </div>
               </div>
