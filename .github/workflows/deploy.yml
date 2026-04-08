@@ -44,5 +44,5 @@ jobs:
             set ssl:verify-certificate false;
             set ftp:passive-mode true;
             open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
-            mirror --reverse --delete --verbose ./out/ $FTP_DIR;
+            mirror --reverse --verbose ./out/ $FTP_DIR;
           "
