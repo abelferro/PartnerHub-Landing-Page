@@ -6,7 +6,6 @@ import React, { useState, useRef } from "react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 import {
-  Users,
   MapPin,
   FileText,
   MessageCircle,
@@ -131,13 +130,13 @@ const SuccessModal = ({ onClose }: { onClose: () => void }) => (
         <CheckCircle2 size={40} />
       </div>
       <h2 id="success-title" className="text-2xl font-black text-slate-900 mb-3">
-        You&apos;re all set! 🎉
+        Thanks for reaching out!
       </h2>
       <p className="text-slate-700 leading-relaxed mb-2">
-        Thanks for reaching out. Someone from our team will be in touch with you soon.
+        We got your info and we&apos;ll be in touch soon to schedule your demo.
       </p>
       <p className="text-slate-500 text-sm mb-8">
-        We&apos;re excited to connect you with the right care and resources.
+        In the meantime, feel free to share Partner Hub with anyone who might benefit.
       </p>
       <button
         onClick={onClose}
@@ -318,9 +317,9 @@ export default function HomePage() {
                     viewport={{ once: true }}
                     onClick={scrollToForm}
                     aria-label="Apply or get started — scroll to sign up form"
-                    className="mt-4 flex items-center gap-2 text-brand-purple font-bold text-lg hover:gap-4 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple rounded self-start md:self-center"
+                    className="mt-4 w-full flex items-center justify-center gap-2 text-brand-purple font-bold text-lg hover:gap-4 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple rounded"
                   >
-                    Apply or Get Started <ArrowRight aria-hidden="true" size={20} />
+                    See How It Works <ArrowRight aria-hidden="true" size={20} />
                   </motion.button>
                 </div>
 
@@ -458,9 +457,9 @@ export default function HomePage() {
                     viewport={{ once: true }}
                     onClick={scrollToForm}
                     aria-label="Access Provider Tools — scroll to sign up form"
-                    className="mt-4 flex items-center gap-2 text-brand-pink font-bold text-lg hover:gap-4 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink rounded self-start md:self-center"
+                    className="mt-4 w-full flex items-center justify-center gap-2 text-brand-pink font-bold text-lg hover:gap-4 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink rounded"
                   >
-                    Access Provider Tools <ArrowRight aria-hidden="true" size={20} />
+                    Request a Walkthrough <ArrowRight aria-hidden="true" size={20} />
                   </motion.button>
                 </div>
               </div>
@@ -472,16 +471,16 @@ export default function HomePage() {
             aria-labelledby="supporting-heading"
             className="py-24 px-6 text-center relative overflow-hidden bg-[#55c858]/5"
           >
+            {/* NC Map background */}
+            <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
+              <img
+                src={`${BASE}/images/north_carolina_map.svg`}
+                alt=""
+                className="w-full max-w-5xl opacity-10 select-none"
+              />
+            </div>
+
             <div className="max-w-3xl mx-auto relative z-10">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                aria-hidden="true"
-                className="w-20 h-20 bg-linear-to-br from-brand-pink via-brand-yellow to-brand-green rounded-3xl mx-auto mb-8 flex items-center justify-center text-white shadow-xl"
-              >
-                <Users size={40} />
-              </motion.div>
               <motion.h2
                 id="supporting-heading"
                 initial={{ opacity: 0, y: 20 }}
@@ -500,11 +499,6 @@ export default function HomePage() {
               >
                 Connecting families with care to ensure they have the relational and concrete supports they need to thrive.
               </motion.p>
-                </div>
-
-            <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 opacity-30">
-              <div className="absolute top-0 left-0 w-64 h-64 bg-brand-blue/50 blur-[100px] rounded-full" />
-              <div className="absolute bottom-0 right-0 w-64 h-64 bg-brand-green/50 blur-[100px] rounded-full" />
             </div>
           </section>
 
@@ -530,7 +524,7 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="text-4xl font-bold mb-4 text-slate-900"
                 >
-                  Get Started Today
+                  Want to See Partner Hub?
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -539,7 +533,7 @@ export default function HomePage() {
                   transition={{ delay: 0.1 }}
                   className="text-slate-700"
                 >
-                  Join Partner Hub now to connect and thrive in early childhood education.
+                  We&apos;d love to walk you through it — whether you&apos;re a family looking for care or a provider ready to simplify your workflow. Drop your info and we&apos;ll reach out to schedule a quick demo.
                 </motion.p>
               </div>
 
@@ -558,7 +552,7 @@ export default function HomePage() {
                     <div>
                       <label htmlFor="first_name" className="block text-sm font-semibold text-slate-700 mb-2">First Name</label>
                       <input
-                        id="first_name" required aria-required="true"
+                        id="first_name" name="first_name" required aria-required="true"
                         type="text" autoComplete="given-name" placeholder="Jane"
                         className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-purple focus:ring-2 focus:ring-brand-purple outline-none transition-all"
                         value={formData.first_name}
@@ -568,7 +562,7 @@ export default function HomePage() {
                     <div>
                       <label htmlFor="last_name" className="block text-sm font-semibold text-slate-700 mb-2">Last Name</label>
                       <input
-                        id="last_name" required aria-required="true"
+                        id="last_name" name="last_name" required aria-required="true"
                         type="text" autoComplete="family-name" placeholder="Doe"
                         className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-purple focus:ring-2 focus:ring-brand-purple outline-none transition-all"
                         value={formData.last_name}
@@ -579,7 +573,7 @@ export default function HomePage() {
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
                     <input
-                      id="email" required aria-required="true"
+                      id="email" name="email" required aria-required="true"
                       type="email" autoComplete="email" placeholder="jane@example.com"
                       className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-purple focus:ring-2 focus:ring-brand-purple outline-none transition-all"
                       value={formData.email}
@@ -590,7 +584,7 @@ export default function HomePage() {
                     <div>
                       <label htmlFor="phone_number" className="block text-sm font-semibold text-slate-700 mb-2">Phone Number</label>
                       <input
-                        id="phone_number" required aria-required="true"
+                        id="phone_number" name="phone" required aria-required="true"
                         type="tel" autoComplete="tel" placeholder="(555) 000-0000"
                         className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-purple focus:ring-2 focus:ring-brand-purple outline-none transition-all"
                         value={formData.phone_number}
@@ -600,7 +594,7 @@ export default function HomePage() {
                     <div>
                       <label htmlFor="zip_code" className="block text-sm font-semibold text-slate-700 mb-2">ZIP Code</label>
                       <input
-                        id="zip_code" required aria-required="true"
+                        id="zip_code" name="postal-code" required aria-required="true"
                         type="text" autoComplete="postal-code" placeholder="27101"
                         className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-purple focus:ring-2 focus:ring-brand-purple outline-none transition-all"
                         value={formData.zip_code}
@@ -609,14 +603,14 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="role" className="block text-sm font-semibold text-slate-700 mb-2">I am a…</label>
+                    <label htmlFor="role" className="block text-sm font-semibold text-slate-700 mb-2">I&apos;m interested as a…</label>
                     <select
                       id="role" required aria-required="true"
                       className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm text-slate-900 focus:border-brand-purple focus:ring-2 focus:ring-brand-purple outline-none transition-all appearance-none"
                       value={formData.role}
                       onChange={(e) => setFormData({ ...formData, role: e.target.value })}
                     >
-                      <option value="">Select your role</option>
+                      <option value="">Who are you?</option>
                       <option value="Parent">Parent / Family</option>
                       <option value="Provider">Care Provider</option>
                       <option value="Teacher">Teacher / Educator</option>
@@ -627,7 +621,7 @@ export default function HomePage() {
                     disabled={isSubmitting}
                     className="w-full py-4 bg-linear-to-r from-brand-blue via-brand-purple to-brand-pink text-white rounded-2xl font-bold text-base shadow-lg flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple transition-opacity"
                   >
-                    {isSubmitting ? "Sending…" : <>Get Started <ArrowRight aria-hidden="true" size={18} /></>}
+                    {isSubmitting ? "Sending…" : <>Request a Demo <ArrowRight aria-hidden="true" size={18} /></>}
                   </button>
                   <div className="flex items-center justify-center gap-2 text-slate-500 text-xs pt-1">
                     <ShieldCheck aria-hidden="true" size={14} />
