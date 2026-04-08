@@ -9,6 +9,13 @@ import {
   CheckCircle2,
   ArrowRight,
   ShieldCheck,
+  Building2,
+  CalendarDays,
+  FileBarChart2,
+  FolderOpen,
+  LayoutDashboard,
+  MessageSquare,
+  Settings,
 } from "lucide-react";
 
 const FloatingBlobs = () => (
@@ -105,42 +112,42 @@ const FamiliesPreview = () => (
       </div>
     </div>
 
-    <div className="bg-brand-blue px-5 py-6 text-white sm:px-6 sm:py-7">
+    <div className="bg-brand-blue px-5 py-5 text-white sm:px-6 sm:py-6">
       <div className="grid gap-4 lg:grid-cols-[0.95fr_1.25fr] lg:items-center">
         <div>
           <p className="text-2xl font-semibold leading-tight sm:text-3xl">Smart Start</p>
         </div>
-        <p className="max-w-lg text-sm leading-7 text-white/86 sm:text-base">
+        <p className="max-w-lg text-sm leading-6 text-white/86 sm:text-base">
           Explore scholarships, Pre-K opportunities, and family support resources from one clear starting point.
         </p>
       </div>
     </div>
 
-    <div className="grid gap-6 bg-white px-5 py-5 sm:px-6 sm:py-6 lg:grid-cols-[0.9fr_1.5fr]">
+    <div className="grid gap-5 bg-white px-5 py-5 sm:px-6 sm:py-6 lg:grid-cols-[0.82fr_1.18fr]">
       <div>
         <p className="text-2xl font-semibold text-slate-900 sm:text-3xl">Applications</p>
-        <p className="mt-3 text-sm leading-6 text-slate-500 sm:text-base">
+        <p className="mt-2 text-sm leading-5 text-slate-500 sm:text-base">
           Choosing early care is one of the most important decisions you&apos;ll make for your child.
         </p>
       </div>
 
-      <div className="space-y-5">
-        <div className="border-b border-slate-100 pb-4">
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div className="border-b border-slate-100 pb-3 sm:border-b-0 sm:border-r sm:pr-4">
           <p className="text-xl font-semibold text-slate-900 sm:text-2xl">Family Childcare Scholarships</p>
-          <p className="mt-2 text-sm leading-7 text-slate-600 sm:text-base">
+          <p className="mt-2 text-sm leading-6 text-slate-600 sm:text-base">
             Scholarships for qualifying families, with support for children from birth through age five.
           </p>
         </div>
         <div>
           <p className="text-xl font-semibold text-slate-900 sm:text-2xl">Pre-K Program</p>
-          <p className="mt-2 text-sm leading-7 text-slate-600 sm:text-base">
+          <p className="mt-2 text-sm leading-6 text-slate-600 sm:text-base">
             Public Pre-K classes with one clear application timeline, eligibility guidance, and next steps in one place.
           </p>
         </div>
       </div>
     </div>
 
-    <div className="grid gap-3 bg-white px-5 pb-5 sm:grid-cols-2 sm:px-6 sm:pb-6">
+    <div className="grid gap-3 bg-white px-5 pb-5 sm:px-6 sm:pb-6">
       <div className="rounded-2xl border border-white/70 bg-white/95 px-4 py-3 shadow-xl backdrop-blur">
         <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">Application Status</p>
         <div className="mt-2 flex items-center gap-3">
@@ -166,7 +173,7 @@ const ProvidersPreview = () => (
   <div className="relative h-full rounded-[32px] overflow-hidden border border-white/60 bg-slate-50 shadow-[0_24px_70px_rgba(15,23,42,0.12)]">
     <div className="flex flex-col gap-4 border-b border-slate-200 bg-white px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-5">
       <div className="flex min-w-0 items-center gap-4">
-        <div className="flex items-center gap-2 rounded-r-xl bg-brand-blue px-3 py-2 text-sm font-semibold text-white">
+        <div className="flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm">
           <Image
             src={`${BASE}/images/Partner_Hub_Icon.png`}
             alt=""
@@ -179,22 +186,33 @@ const ProvidersPreview = () => (
         <p className="truncate text-sm font-semibold text-slate-900">Smart Start</p>
       </div>
       <div className="flex items-center gap-2 text-xs text-slate-500">
-        <div className="rounded-full border border-slate-200 px-3 py-1">Message Center</div>
+        <div className="flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-2 shadow-sm">
+          <MessageSquare size={14} />
+          <span>Message Center</span>
+        </div>
       </div>
     </div>
 
     <div className="grid h-[calc(100%-81px)] md:grid-cols-[200px_1fr]">
       <div className="border-b border-slate-200 bg-white px-4 py-4 md:border-b-0 md:border-r md:px-4 md:py-5">
         <div className="flex gap-2 overflow-x-auto pb-1 md:block md:space-y-2 md:overflow-visible md:pb-0">
-          {["Dashboard", "Message Center", "Reports", "Attendance", "Site/Provider", "Administration", "Applications"].map((item, index) => (
+          {[
+            { label: "Dashboard", icon: LayoutDashboard },
+            { label: "Message Center", icon: MessageSquare },
+            { label: "Reports", icon: FileBarChart2 },
+            { label: "Attendance", icon: CalendarDays },
+            { label: "Site/Provider", icon: Building2 },
+            { label: "Administration", icon: Settings },
+            { label: "Applications", icon: FolderOpen },
+          ].map(({ label, icon: Icon }, index) => (
             <div
-              key={item}
+              key={label}
               className={`flex shrink-0 items-center gap-3 rounded-xl px-3 py-2.5 text-sm md:shrink ${
                 index === 0 ? "bg-brand-blue/8 font-semibold text-brand-blue" : "text-slate-700"
               }`}
             >
-              <div className={`h-2.5 w-2.5 rounded-full ${index === 0 ? "bg-brand-blue" : "bg-slate-300"}`} />
-              <span>{item}</span>
+              <Icon size={16} className={index === 0 ? "text-brand-blue" : "text-slate-400"} />
+              <span>{label}</span>
             </div>
           ))}
         </div>
@@ -202,16 +220,26 @@ const ProvidersPreview = () => (
 
       <div className="px-4 py-4 sm:px-5 sm:py-5">
         <p className="text-2xl font-semibold text-slate-900 sm:text-3xl">Administrator Dashboard</p>
-        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+        <div className="mt-5 grid gap-4">
           <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
-            <p className="text-lg font-semibold text-slate-900 sm:text-xl">Reports</p>
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue">
+                <FileBarChart2 size={20} />
+              </div>
+              <p className="text-lg font-semibold text-slate-900 sm:text-xl">Reports</p>
+            </div>
             <div className="mt-4 space-y-3 text-sm">
               <p className="text-brand-blue">Reports</p>
               <p className="text-brand-blue">Attendance</p>
             </div>
           </div>
           <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
-            <p className="text-lg font-semibold text-slate-900 sm:text-xl">Site/Provider Maintenance</p>
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-purple/10 text-brand-purple">
+                <Building2 size={20} />
+              </div>
+              <p className="text-lg font-semibold text-slate-900 sm:text-xl">Site/Provider Maintenance</p>
+            </div>
             <div className="mt-4 space-y-3 text-sm">
               <p className="text-brand-blue">Organizations</p>
               <p className="text-brand-blue">Sites</p>
@@ -219,7 +247,12 @@ const ProvidersPreview = () => (
             </div>
           </div>
           <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
-            <p className="text-lg font-semibold text-slate-900 sm:text-xl">Attendance</p>
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-green/10 text-brand-green">
+                <CalendarDays size={20} />
+              </div>
+              <p className="text-lg font-semibold text-slate-900 sm:text-xl">Attendance</p>
+            </div>
             <div className="mt-4 space-y-3 text-sm">
               <p className="text-brand-blue">Attendance</p>
               <p className="text-brand-blue">Children</p>
@@ -227,7 +260,12 @@ const ProvidersPreview = () => (
             </div>
           </div>
           <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
-            <p className="text-lg font-semibold text-slate-900 sm:text-xl">Applications</p>
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-pink/10 text-brand-pink">
+                <FolderOpen size={20} />
+              </div>
+              <p className="text-lg font-semibold text-slate-900 sm:text-xl">Applications</p>
+            </div>
             <div className="mt-4 space-y-3 text-sm">
               <p className="text-brand-blue">Manage Children Applications</p>
               <p className="text-brand-blue">Manage Enrollments</p>
@@ -424,6 +462,16 @@ export default function HomePage() {
               </SectionTitle>
 
               <div className="grid gap-10 md:grid-cols-[0.78fr_1.22fr] md:items-start lg:gap-14">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, x: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  aria-hidden="true"
+                  className="relative min-h-[560px] sm:min-h-[620px] md:h-[680px] lg:h-[720px] glass rounded-[40px] overflow-hidden p-4 md:p-5"
+                >
+                  <FamiliesPreview />
+                </motion.div>
+
                 <div className="grid gap-6 justify-items-start md:justify-items-center">
                   <FeatureCard
                     iconSrc={`${BASE}/icons/icon-applications.svg`}
@@ -447,16 +495,6 @@ export default function HomePage() {
                     delay={0.3}
                   />
                 </div>
-
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9, x: 20 }}
-                  whileInView={{ opacity: 1, scale: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  aria-hidden="true"
-                  className="relative min-h-[560px] sm:min-h-[620px] md:h-[680px] lg:h-[720px] glass rounded-[40px] overflow-hidden p-4 md:p-5"
-                >
-                  <FamiliesPreview />
-                </motion.div>
               </div>
 
               <div className="mt-16 flex justify-center">
@@ -497,12 +535,12 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, scale: 1, x: 0 }}
                   viewport={{ once: true }}
                   aria-hidden="true"
-                  className="relative min-h-[560px] sm:min-h-[620px] md:h-[680px] lg:h-[720px] glass rounded-[40px] overflow-hidden p-4 md:p-5 order-2 md:order-1"
+                  className="relative min-h-[560px] sm:min-h-[620px] md:h-[680px] lg:h-[720px] glass rounded-[40px] overflow-hidden p-4 md:p-5"
                 >
                   <ProvidersPreview />
                 </motion.div>
 
-                <div className="grid gap-6 order-1 md:order-2 justify-items-start md:justify-items-center">
+                <div className="grid gap-6 justify-items-start md:justify-items-center">
                   <FeatureCard
                     iconSrc={`${BASE}/icons/icon-attendance.svg`}
                     iconAlt="Attendance tracking icon"
