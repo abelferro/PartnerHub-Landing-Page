@@ -125,7 +125,7 @@ const FamiliesPreview = () => (
 
     <div className="grid gap-5 bg-white px-5 py-5 sm:px-6 sm:py-6 lg:gap-6">
       <div className="max-w-2xl">
-        <p className="text-2xl font-semibold leading-tight text-slate-900 sm:text-[2.55rem] lg:text-[2.35rem]">Applications</p>
+        <p className="text-2xl font-semibold leading-tight text-slate-900 sm:text-3xl">Applications</p>
         <p className="mt-2 text-sm leading-5 text-slate-500 sm:text-[0.98rem] lg:max-w-xl">
           Choosing early care is one of the most important decisions you&apos;ll make for your child.
         </p>
@@ -133,13 +133,13 @@ const FamiliesPreview = () => (
 
       <div className="grid gap-4 lg:grid-cols-2">
         <div className="border-b border-slate-100 pb-3 lg:border-b-0 lg:border-r lg:pr-5">
-          <p className="text-xl font-semibold leading-tight text-slate-900 sm:text-[2rem] lg:text-[1.85rem]">Family Childcare Scholarships</p>
+          <p className="text-lg font-semibold leading-tight text-slate-900 sm:text-xl">Family Childcare Scholarships</p>
           <p className="mt-2 text-sm leading-6 text-slate-600 sm:text-[0.98rem]">
             Scholarships for qualifying families, with support for children from birth through age five.
           </p>
         </div>
         <div>
-          <p className="text-xl font-semibold leading-tight text-slate-900 sm:text-[2rem] lg:text-[1.85rem]">Pre-K Program</p>
+          <p className="text-lg font-semibold leading-tight text-slate-900 sm:text-xl">Pre-K Program</p>
           <p className="mt-2 text-sm leading-6 text-slate-600 sm:text-[0.98rem]">
             Public Pre-K classes with one clear application timeline, eligibility guidance, and next steps in one place.
           </p>
@@ -148,7 +148,7 @@ const FamiliesPreview = () => (
     </div>
 
     <div className="grid gap-3 bg-white px-5 pb-5 sm:px-6 sm:pb-6">
-      <div className="rounded-2xl border border-white/70 bg-white/95 px-4 py-3 shadow-xl backdrop-blur">
+      <div className="rounded-2xl border border-[#d9e8ff] bg-linear-to-br from-[#f6faff] via-[#f8fbff] to-white px-4 py-3 shadow-xl backdrop-blur">
         <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">Application Status</p>
         <div className="mt-2 flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-600">
@@ -160,7 +160,7 @@ const FamiliesPreview = () => (
           </div>
         </div>
       </div>
-      <div className="rounded-2xl border border-white/70 bg-white/95 px-4 py-3 shadow-xl backdrop-blur">
+      <div className="rounded-2xl border border-[#e6ebf5] bg-linear-to-br from-[#fbfcff] via-[#f8faff] to-white px-4 py-3 shadow-xl backdrop-blur">
         <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">Next Best Match</p>
         <p className="mt-2 text-sm font-semibold text-slate-900">3 providers near 27101</p>
         <p className="mt-1 text-xs text-slate-500">Filter by age, location, and schedule.</p>
