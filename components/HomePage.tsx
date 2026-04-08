@@ -64,7 +64,7 @@ const SectionTitle = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="text-lg text-slate-700 max-w-2xl mx-auto"
+        className="text-lg text-slate-900 max-w-2xl mx-auto"
       >
         {subtitle}
       </motion.p>
@@ -99,7 +99,7 @@ const FeatureCard = ({
       <Icon size={24} />
     </div>
     <h3 className="text-xl font-semibold">{title}</h3>
-    <p className="text-slate-700 leading-relaxed">{description}</p>
+    <p className="text-slate-900 leading-relaxed">{description}</p>
   </motion.div>
 );
 
@@ -132,7 +132,7 @@ const SuccessModal = ({ onClose }: { onClose: () => void }) => (
       <h2 id="success-title" className="text-2xl font-black text-slate-900 mb-3">
         Thanks for reaching out!
       </h2>
-      <p className="text-slate-700 leading-relaxed mb-2">
+      <p className="text-slate-900 leading-relaxed mb-2">
         We got your info and we&apos;ll be in touch soon to schedule your demo.
       </p>
       <p className="text-slate-500 text-sm mb-8">
@@ -352,7 +352,7 @@ export default function HomePage() {
                       <div className="w-8 h-8 rounded-full bg-brand-purple/20" />
                       <p className="text-sm font-bold">Provider Support</p>
                     </div>
-                    <p className="text-xs text-slate-700">Your documents have been verified. You&apos;re all set!</p>
+                    <p className="text-xs text-slate-900">Your documents have been verified. You&apos;re all set!</p>
                   </div>
                 </motion.div>
               </div>
@@ -403,7 +403,7 @@ export default function HomePage() {
                     <div className="glass p-6 rounded-3xl">
                       <p className="text-xs font-bold text-slate-600 uppercase mb-2">Payments</p>
                       <p className="text-3xl font-bold text-brand-pink">$12.4k</p>
-                      <p className="text-xs text-slate-700 mt-1">Pending verification</p>
+                      <p className="text-xs text-slate-900 mt-1">Pending verification</p>
                     </div>
                   </div>
 
@@ -419,7 +419,7 @@ export default function HomePage() {
                             <div className="w-10 h-10 rounded-xl bg-slate-100" />
                             <div>
                               <p className="text-sm font-semibold">Site #{100 + i}</p>
-                              <p className="text-xs text-slate-700">Monthly Report</p>
+                              <p className="text-xs text-slate-900">Monthly Report</p>
                             </div>
                           </div>
                           <div className="text-right">
@@ -482,7 +482,7 @@ export default function HomePage() {
               <img
                 src={`${BASE}/images/north_carolina_map.svg`}
                 alt=""
-                className="w-full max-w-5xl opacity-10 select-none"
+                className="w-full max-w-5xl opacity-10 select-none p-8"
               />
             </div>
 
@@ -501,7 +501,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-xl text-slate-700 mb-8 leading-relaxed"
+                className="text-xl text-slate-900 mb-8 leading-relaxed"
               >
                 Connecting families with care to ensure they have the relational and concrete supports they need to thrive.
               </motion.p>
@@ -537,7 +537,7 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 }}
-                  className="text-slate-700"
+                  className="text-slate-900"
                 >
                   We&apos;d love to walk you through it — whether you&apos;re a family looking for care or a provider ready to simplify your workflow. Drop your info and we&apos;ll reach out to schedule a quick demo.
                 </motion.p>
@@ -556,7 +556,7 @@ export default function HomePage() {
                 >
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="first_name" className="block text-sm font-semibold text-slate-700 mb-2">First Name</label>
+                      <label htmlFor="first_name" className="block text-sm font-semibold text-slate-900 mb-2">First Name</label>
                       <input
                         id="first_name" name="first_name" required aria-required="true"
                         type="text" autoComplete="given-name" placeholder="Jane"
@@ -566,7 +566,7 @@ export default function HomePage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="last_name" className="block text-sm font-semibold text-slate-700 mb-2">Last Name</label>
+                      <label htmlFor="last_name" className="block text-sm font-semibold text-slate-900 mb-2">Last Name</label>
                       <input
                         id="last_name" name="last_name" required aria-required="true"
                         type="text" autoComplete="family-name" placeholder="Doe"
@@ -577,7 +577,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
+                    <label htmlFor="email" className="block text-sm font-semibold text-slate-900 mb-2">Email Address</label>
                     <input
                       id="email" name="email" required aria-required="true"
                       type="email" autoComplete="email" placeholder="jane@example.com"
@@ -588,7 +588,7 @@ export default function HomePage() {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="phone_number" className="block text-sm font-semibold text-slate-700 mb-2">Phone Number</label>
+                      <label htmlFor="phone_number" className="block text-sm font-semibold text-slate-900 mb-2">Phone Number</label>
                       <input
                         id="phone_number" name="phone" required aria-required="true"
                         type="tel" autoComplete="tel" placeholder="(555) 000-0000"
@@ -598,7 +598,7 @@ export default function HomePage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="zip_code" className="block text-sm font-semibold text-slate-700 mb-2">ZIP Code</label>
+                      <label htmlFor="zip_code" className="block text-sm font-semibold text-slate-900 mb-2">ZIP Code</label>
                       <input
                         id="zip_code" name="postal-code" required aria-required="true"
                         type="text" autoComplete="postal-code" placeholder="27101"
@@ -609,7 +609,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="role" className="block text-sm font-semibold text-slate-700 mb-2">I&apos;m interested as a…</label>
+                    <label htmlFor="role" className="block text-sm font-semibold text-slate-900 mb-2">I&apos;m interested as a…</label>
                     <select
                       id="role" required aria-required="true"
                       className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm text-slate-900 focus:border-brand-purple focus:ring-2 focus:ring-brand-purple outline-none transition-all appearance-none"
@@ -646,8 +646,8 @@ export default function HomePage() {
                     className="h-12 w-auto"
                   />
                   <div className="flex gap-4" aria-label="Program affiliations">
-                    <div className="px-4 py-2 rounded-lg bg-white shadow-sm text-xs font-medium text-slate-700">NC Pre-K</div>
-                    <div className="px-4 py-2 rounded-lg bg-white shadow-sm text-xs font-medium text-slate-700">Smart Start</div>
+                    <div className="px-4 py-2 rounded-lg bg-white shadow-sm text-xs font-medium text-slate-900">NC Pre-K</div>
+                    <div className="px-4 py-2 rounded-lg bg-white shadow-sm text-xs font-medium text-slate-900">Smart Start</div>
                   </div>
                 </div>
               </footer>
