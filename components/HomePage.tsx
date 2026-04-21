@@ -466,7 +466,7 @@ export default function HomePage() {
             <div className="max-w-6xl mx-auto">
               <SectionTitle
                 id="families-heading"
-                subtitle="Find care, apply for programs, and stay connected with your child's journey."
+                subtitle="Families can find care, apply for programs, and stay connected with their child's journey."
           >
                 For Families
               </SectionTitle>
@@ -487,14 +487,14 @@ export default function HomePage() {
                     iconSrc={`${BASE}/icons/icon-applications.svg`}
                     iconAlt="Secure applications icon"
                     title="Secure Applications"
-                    description="Securely upload required documents and submit applications for Pre-K and scholarships in minutes."
+                    description="Securely upload required documents and submit applications for Pre-K and childcare scholarships."
                     delay={0.1}
                   />
                   <FeatureCard
                     iconSrc={`${BASE}/icons/icon-mapping.svg`}
                     iconAlt="CCR&R map icon"
                     title="CCR&R Map"
-                    description="Find providers that meet your family's specific needs using our interactive resource map."
+                    description="Find providers that meet the family's specific needs using our interactive resource map."
                     delay={0.2}
                   />
                   <FeatureCard
@@ -555,7 +555,7 @@ export default function HomePage() {
                     iconSrc={`${BASE}/icons/icon-attendance.svg`}
                     iconAlt="Attendance tracking icon"
                     title="Attendance Tracking"
-                    description="Keep accurate attendance records with our easy-to-use digital check-in system."
+                    description="Keep accurate attendance records with our easy-to-use digital system."
                     delay={0.1}
                     compact
                   />
@@ -654,7 +654,7 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   className="text-4xl font-bold mb-4 text-slate-900"
                 >
-                  Want to See Partner Hub?
+                  Want to see Partner Hub?
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -663,7 +663,7 @@ export default function HomePage() {
                   transition={{ delay: 0.1 }}
                   className="text-slate-900"
                 >
-                  We&apos;d love to walk you through it — whether you&apos;re a family looking for care or a provider ready to simplify your workflow. Drop your info and we&apos;ll reach out to schedule a quick demo.
+                  We&apos;d love to walk you through it. Drop your info and we&apos;ll reach out to schedule a quick demo.
                 </motion.p>
               </div>
 

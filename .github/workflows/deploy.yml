@@ -44,6 +44,10 @@ jobs:
           [ -n "$FTP_USERNAME" ] || { echo "Missing secret: FTP_USERNAME"; exit 1; }
           [ -n "$FTP_PASSWORD" ] || { echo "Missing secret: FTP_PASSWORD"; exit 1; }
           [ -n "$FTP_DIR" ] || { echo "Missing secret: FTP_DIR"; exit 1; }
+          case "$FTP_DIR" in
+            */lp/smart-start-2026|*/lp/smart-start-2026/) ;;
+            *) echo "FTP_DIR must point to the WordPress-safe subfolder: /lp/smart-start-2026/"; exit 1 ;;
+          esac
 
       - name: Deploy to Hostinger via lftp
         env:
@@ -62,5 +66,6 @@ jobs:
             set net:reconnect-interval-base 5;
             set ftp:use-feat false;
             open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
-            mirror --reverse --verbose --use-pget-n=4 ./out/ $FTP_DIR;
+            cd $FTP_DIR;
+            mirror --reverse --verbose --use-pget-n=4 ./out/ .;
           "

@@ -1,6 +1,6 @@
 Options -Indexes
 RewriteEngine On
-RewriteBase /smart-start-2026/
+RewriteBase /lp/smart-start-2026/
 
 # Serve existing files and directories directly
 RewriteCond %{REQUEST_FILENAME} -f [OR]
